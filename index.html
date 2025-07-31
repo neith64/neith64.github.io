@@ -211,53 +211,48 @@
     <div class="btns">
       <a href="https://www.mediafire.com/file/tpenirggvz2wr7n/Runv1.0.rar/file" download class="btn">Descargar</a>
     </div>
-    <div class="devices">
-
-    </div>
+    <div class="devices"></div>
   </header>
 
   <section class="section">
     <h2>Sobre nuestro juego</h2>
     <p>Este juego fue desarrollado para enseñar a las personas sobre la seguridad laboral mediante una mecánica simple como fallar al chocar con un objeto dentro del juego.</p>
     <div class="features">
-  <div class="feature">
-    <h3>Idea principal</h3>
-    <p>La idea nació como una forma interactiva y divertida de enseñar a las personas sobre la seguridad laboral. A través del juego, buscamos que los usuarios reconozcan riesgos y aprendan a prevenir accidentes.</p>
-  </div>
-  <div class="feature">
-    <h3>Desarrollo</h3>
-    <p>El juego fue desarrollado en el motor gráfico Godot, que utiliza como lenguaje de programación GDScript, su propio lenguaje creado específicamente para Godot. Además, emplea un lenguaje propio para la creación de shaders.</p>
-  </div>
-  <div class="feature">
-    <h3>Objetivo</h3>
-    <p>Fue desarrollado no con la intención de ser un juego que se juegue solo una vez, sino como una experiencia para disfrutar cada vez que tengas tiempo libre. Tiene una mecánica simple pero entretenida, con el objetivo de enseñar sobre seguridad laboral de forma constante y accesible.</p>
-  </div>
-</div>
-
+      <div class="feature">
+        <h3>Idea principal</h3>
+        <p>La idea nació como una forma interactiva y divertida de enseñar a las personas sobre la seguridad laboral. A través del juego, buscamos que los usuarios reconozcan riesgos y aprendan a prevenir accidentes.</p>
+      </div>
+      <div class="feature">
+        <h3>Desarrollo</h3>
+        <p>El juego fue desarrollado en el motor gráfico Godot, que utiliza como lenguaje de programación GDScript, su propio lenguaje creado específicamente para Godot. Además, emplea un lenguaje propio para la creación de shaders.</p>
+      </div>
+      <div class="feature">
+        <h3>Objetivo</h3>
+        <p>Fue desarrollado no con la intención de ser un juego que se juegue solo una vez, sino como una experiencia para disfrutar cada vez que tengas tiempo libre. Tiene una mecánica simple pero entretenida, con el objetivo de enseñar sobre seguridad laboral de forma constante y accesible.</p>
+      </div>
+    </div>
   </section>
 
   <section class="gallery-section">
     <div class="gallery-wrapper">
 
-      
       <div class="gallery-box">
         <h2>Capturas del juego</h2>
         <div class="gallery-container">
           <button class="gallery-btn left" onclick="prevImage('game')">&#10094;</button>
           <div class="image-frame">
-            <img id="gallery-game" src="https://via.placeholder.com/800x400?text=Captura+1" alt="Captura del juego" />
+            <img id="gallery-game" src="" alt="Captura del juego" />
           </div>
           <button class="gallery-btn right" onclick="nextImage('game')">&#10095;</button>
         </div>
       </div>
-
 
       <div class="gallery-box">
         <h2>Pantallas de muerte y mensajes</h2>
         <div class="gallery-container">
           <button class="gallery-btn left" onclick="prevImage('death')">&#10094;</button>
           <div class="image-frame">
-            <img id="gallery-death" src="https://via.placeholder.com/800x400?text=Muerte+1" alt="Pantalla de muerte" />
+            <img id="gallery-death" src="" alt="Pantalla de muerte" />
           </div>
           <button class="gallery-btn right" onclick="nextImage('death')">&#10095;</button>
         </div>
@@ -270,51 +265,51 @@
     <p>© 2025 Run - Dario - Damaris - Gabriela</p>
   </footer>
 
-<script>
-  const galleryData = {
-    game: [
-      'a.png',
-      'b.png',
-      'titulo.png',
-    ],
-    death: [
-      '1.png',
-      '2.png',
-      '3.png',
-      '4.png'
-    ]
-  };
+  <script>
+    const galleryData = {
+      game: [
+        'a.png',
+        'b.png',
+        'titulo.png',
+      ],
+      death: [
+        '1.png',
+        '2.png',
+        '3.png',
+        '4.png'
+      ]
+    };
 
-  const currentIndexes = {
-    game: 0,
-    death: 0
-  };
+    const currentIndexes = {
+      game: 0,
+      death: 0
+    };
 
-  function showImage(galleryName, index) {
-    const img = document.getElementById(`gallery-${galleryName}`);
-    img.style.opacity = 0;
-    setTimeout(() => {
-      img.src = galleryData[galleryName][index];
-      img.style.opacity = 1;
-    }, 300);
-  }
+    function showImage(galleryName, index) {
+      const img = document.getElementById(`gallery-${galleryName}`);
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = galleryData[galleryName][index];
+        img.style.opacity = 1;
+      }, 300);
+    }
 
-  function nextImage(galleryName) {
-    currentIndexes[galleryName] = (currentIndexes[galleryName] + 1) % galleryData[galleryName].length;
-    showImage(galleryName, currentIndexes[galleryName]);
-  }
+    function nextImage(galleryName) {
+      currentIndexes[galleryName] = (currentIndexes[galleryName] + 1) % galleryData[galleryName].length;
+      showImage(galleryName, currentIndexes[galleryName]);
+    }
 
-  function prevImage(galleryName) {
-    currentIndexes[galleryName] = (currentIndexes[galleryName] - 1 + galleryData[galleryName].length) % galleryData[galleryName].length;
-    showImage(galleryName, currentIndexes[galleryName]);
-  }
+    function prevImage(galleryName) {
+      currentIndexes[galleryName] = (currentIndexes[galleryName] - 1 + galleryData[galleryName].length) % galleryData[galleryName].length;
+      showImage(galleryName, currentIndexes[galleryName]);
+    }
 
-  // 👉 Cargar imagen inicial para cada galería
-  window.onload = () => {
-    showImage('game', currentIndexes['game']);
-    showImage('death', currentIndexes['death']);
-  };
-</script>
+    // Cargar imagen inicial
+    window.onload = () => {
+      showImage('game', currentIndexes['game']);
+      showImage('death', currentIndexes['death']);
+    };
+  </script>
 
 </body>
 </html>
