@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Run v1.0</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background: url('titulo.png') no-repeat center center;
+      background-size: cover;
+      color: white;
+      padding: 60px 40px;
+      text-align: left;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    header p {
+      font-size: 1.2em;
+      margin-top: 10px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .btns {
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px 10px 10px 0;
+      padding: 12px 24px;
+      background-color: white;
+      color: #8e44ad;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s ease;
+      border: none;
+    }
+
+    .btn:hover {
+      background-color: #f2f2f2;
+    }
+
+    .devices {
+      margin-top: 30px;
+    }
+
+    .devices img {
+      max-width: 100px;
+      margin-right: 10px;
+    }
+
+    .section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
+
+    .feature {
+      background-color: white;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      max-width: 300px;
+    }
+
+    .feature h3 {
+      margin-bottom: 10px;
+      color: #27ae60;
+    }
+
+    /* GALERÍA */
+    .gallery-section {
+      text-align: center;
+      padding: 60px 20px;
+      background-color: #fff;
+    }
+
+    .gallery-wrapper {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .gallery-box {
+      flex: 1 1 400px;
+      max-width: 800px;
+    }
+
+    .gallery-box h2 {
+      font-size: 2.2em;
+      margin-bottom: 30px;
+    }
+
+    .gallery-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .image-frame {
+      width: 800px;
+      height: 400px;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      position: relative;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.5s ease-in-out;
+      opacity: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .gallery-btn {
+      background-color: rgba(0, 0, 0, 0.5);
+      border: none;
+      color: white;
+      font-size: 2em;
+      padding: 10px 15px;
+      cursor: pointer;
+      border-radius: 50%;
+      margin: 0 10px;
+      z-index: 2;
+      transition: background-color 0.3s ease;
+    }
+
+    .gallery-btn:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    footer {
+      background-color: #1F1F1F;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        text-align: center;
+        padding: 40px 20px;
+      }
+
+      .btns {
+        text-align: center;
+      }
+
+      .btn {
+        margin: 10px 5px;
+      }
+
+      .devices {
+        justify-content: center;
+        text-align: center;
+      }
+
+      .gallery-wrapper {
+        flex-direction: column;
+        gap: 60px;
+      }
+
+      .image-frame {
+        width: 100%;
+        height: auto;
+      }
+
+      .image-frame img {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Run v1.0</h1>
+    <p>¡Diviértete y aprende al mismo tiempo sobre la seguridad laboral!</p>
+    <div class="btns">
+      <a href="https://www.mediafire.com/file/tpenirggvz2wr7n/Runv1.0.rar/file" download class="btn">Descargar</a>
+    </div>
+    <div class="devices"></div>
+  </header>
+
+  <section class="section">
+    <h2>Sobre nuestro juego</h2>
+    <p>Este juego fue desarrollado para enseñar a las personas sobre la seguridad laboral mediante una mecánica simple como fallar al chocar con un objeto dentro del juego.</p>
+    <div class="features">
+      <div class="feature">
+        <h3>Idea principal</h3>
+        <p>La idea nació como una forma interactiva y divertida de enseñar a las personas sobre la seguridad laboral. A través del juego, buscamos que los usuarios reconozcan riesgos y aprendan a prevenir accidentes.</p>
+      </div>
+      <div class="feature">
+        <h3>Desarrollo</h3>
+        <p>El juego fue desarrollado en el motor gráfico Godot, que utiliza como lenguaje de programación GDScript, su propio lenguaje creado específicamente para Godot. Además, emplea un lenguaje propio para la creación de shaders.</p>
+      </div>
+      <div class="feature">
+        <h3>Objetivo</h3>
+        <p>Fue desarrollado no con la intención de ser un juego que se juegue solo una vez, sino como una experiencia para disfrutar cada vez que tengas tiempo libre. Tiene una mecánica simple pero entretenida, con el objetivo de enseñar sobre seguridad laboral de forma constante y accesible.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="gallery-section">
+    <div class="gallery-wrapper">
+
+      <div class="gallery-box">
+        <h2>Capturas del juego</h2>
+        <div class="gallery-container">
+          <button class="gallery-btn left" onclick="prevImage('game')">&#10094;</button>
+          <div class="image-frame">
+            <img id="gallery-game" src="" alt="Captura del juego" />
+          </div>
+          <button class="gallery-btn right" onclick="nextImage('game')">&#10095;</button>
+        </div>
+      </div>
+
+      <div class="gallery-box">
+        <h2>Pantallas de muerte y mensajes</h2>
+        <div class="gallery-container">
+          <button class="gallery-btn left" onclick="prevImage('death')">&#10094;</button>
+          <div class="image-frame">
+            <img id="gallery-death" src="" alt="Pantalla de muerte" />
+          </div>
+          <button class="gallery-btn right" onclick="nextImage('death')">&#10095;</button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Run - Dario - Damaris - Gabriela</p>
+  </footer>
+
+  <script>
+    const galleryData = {
+      game: [
+        'a.png',
+        'b.png',
+        'titulo.png',
+      ],
+      death: [
+        '1.png',
+        '2.png',
+        '3.png',
+        '4.png'
+      ]
+    };
+
+    const currentIndexes = {
+      game: 0,
+      death: 0
+    };
+
+    function showImage(galleryName, index) {
+      const img = document.getElementById(`gallery-${galleryName}`);
+      img.style.opacity = 0;
+      setTimeout(() => {
+        img.src = galleryData[galleryName][index];
+        img.style.opacity = 1;
+      }, 300);
+    }
+
+    function nextImage(galleryName) {
+      currentIndexes[galleryName] = (currentIndexes[galleryName] + 1) % galleryData[galleryName].length;
+      showImage(galleryName, currentIndexes[galleryName]);
+    }
+
+    function prevImage(galleryName) {
+      currentIndexes[galleryName] = (currentIndexes[galleryName] - 1 + galleryData[galleryName].length) % galleryData[galleryName].length;
+      showImage(galleryName, currentIndexes[galleryName]);
+    }
+
+    // Cargar imagen inicial
+    window.onload = () => {
+      showImage('game', currentIndexes['game']);
+      showImage('death', currentIndexes['death']);
+    };
+  </script>
+
+</body>
+</html>
