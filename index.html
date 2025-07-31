@@ -270,45 +270,51 @@
     <p>© 2025 Run - Dario - Damaris - Gabriela</p>
   </footer>
 
-  <script>
-    const galleryData = {
-      game: [
-        'a.png',
-        'b.png',
-        'titulo.png',
-      ],
-      death: [
-        '1.png',
-        '2.png',
-        '3.png',
-        '4.png'
-      ]
-    };
+<script>
+  const galleryData = {
+    game: [
+      'a.png',
+      'b.png',
+      'titulo.png',
+    ],
+    death: [
+      '1.png',
+      '2.png',
+      '3.png',
+      '4.png'
+    ]
+  };
 
-    const currentIndexes = {
-      game: 0,
-      death: 0
-    };
+  const currentIndexes = {
+    game: 0,
+    death: 0
+  };
 
-    function showImage(galleryName, index) {
-      const img = document.getElementById(`gallery-${galleryName}`);
-      img.style.opacity = 0;
-      setTimeout(() => {
-        img.src = galleryData[galleryName][index];
-        img.style.opacity = 1;
-      }, 300);
-    }
+  function showImage(galleryName, index) {
+    const img = document.getElementById(`gallery-${galleryName}`);
+    img.style.opacity = 0;
+    setTimeout(() => {
+      img.src = galleryData[galleryName][index];
+      img.style.opacity = 1;
+    }, 300);
+  }
 
-    function nextImage(galleryName) {
-      currentIndexes[galleryName] = (currentIndexes[galleryName] + 1) % galleryData[galleryName].length;
-      showImage(galleryName, currentIndexes[galleryName]);
-    }
+  function nextImage(galleryName) {
+    currentIndexes[galleryName] = (currentIndexes[galleryName] + 1) % galleryData[galleryName].length;
+    showImage(galleryName, currentIndexes[galleryName]);
+  }
 
-    function prevImage(galleryName) {
-      currentIndexes[galleryName] = (currentIndexes[galleryName] - 1 + galleryData[galleryName].length) % galleryData[galleryName].length;
-      showImage(galleryName, currentIndexes[galleryName]);
-    }
-  </script>
+  function prevImage(galleryName) {
+    currentIndexes[galleryName] = (currentIndexes[galleryName] - 1 + galleryData[galleryName].length) % galleryData[galleryName].length;
+    showImage(galleryName, currentIndexes[galleryName]);
+  }
+
+  // 👉 Cargar imagen inicial para cada galería
+  window.onload = () => {
+    showImage('game', currentIndexes['game']);
+    showImage('death', currentIndexes['death']);
+  };
+</script>
 
 </body>
 </html>
